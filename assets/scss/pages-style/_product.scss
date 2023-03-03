@@ -1,0 +1,224 @@
+.product{
+    .wrapper{
+        @extend %container;
+        .photos{
+            width: 40%;
+            .cover{
+                @include cover(100%);
+                background-color: $lightgray;
+                img{
+                    object-fit: contain;
+                    transform: scale(0.8);
+                }
+            }
+            .container{
+                @extend %container;
+                margin-top: 5%;
+                .cover{
+                    width: 30%;
+                    padding-top: 30%;
+                }
+            }
+        }
+        .product-info{
+            width: 52.5%;
+            h3{
+                @include font(700);
+                text-transform: capitalize;
+            }
+            .product-name{
+                @extend %container;
+                h1{
+                    @include font(900);
+                    text-transform: uppercase;
+                    font-size: 36px;
+                    color: $mainBlack;
+                    &.price{
+                        color: $orange;
+                    }
+                }
+            }
+            .description{
+                @include font(400);
+                font-size: 12px;
+                color: $gray;
+                text-align: justify;
+                margin: 20px 0;
+            }
+            .settings{
+                @extend %container;
+                .size,.color{
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    color: $mainBlack;
+                }
+                .size{
+                    p{
+                        @include font(500);
+                        text-transform: uppercase;
+                        color: $gray;
+                        cursor: pointer;
+                        &.active{
+                            color: $black;
+                            border-bottom: 1px solid $mainBlack;
+                        }
+                    }
+                }
+                .color{
+                    .ellipse-container{
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .ellipse{
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 100%;
+                            cursor: pointer;
+                            filter: brightness(0.8);
+                            &.active{
+                                filter: brightness(1);
+                                width: 14px;
+                                height: 14px;
+                                box-shadow: 0 0 5px 4px rgba($color: $orange, $alpha: 0.2);
+                            }
+                        }
+                    }
+                }
+            }
+            .card1{
+                margin-top: 30px;
+                box-shadow: 0 0 5px 3px rgba($color: #000000, $alpha: 0.05);
+                padding: 20px;
+                h3{
+                    color: $mainBlack;
+                }
+                .counter-container{
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    
+                }
+                .to-cart{
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-top: 50px;
+
+                    .btn{
+                        transition: 0.4s;
+                        &.first{
+                            border: 1px solid $lightgray;
+                            padding: 10px 10px;
+                            border-radius: 5px;
+                            margin-right: 15px;
+                            &:hover{
+                                cursor: pointer;
+                                background-color: $orange;
+                            }
+                        }
+                        &.orange{
+                            width: 25%;
+                            background-color: $orange;
+                            color: $white;
+                            &:hover{
+                                background-color: $white;
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+            .about-clothes{
+                margin-top: 30px;
+                .block{
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    h3{
+                        color: $mainBlack;
+                    }
+                    p{
+                        @include font(500);
+                        color: $mainBlack;
+                    }
+                    &.two{
+                        margin: 20px 0;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.counter{
+    display: flex;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    align-items: center;
+    width: fit-content;
+    .btn{
+        @include font(700);
+        padding: 5px 10px;
+        transition: 0.4s;
+        &:hover{
+            background-color: $orange;
+            cursor: pointer;
+            color: $white;
+        }
+        &.minus{
+            border-radius: 4px 0 0 4px;
+        }
+        &.plus{
+            border-radius: 0 4px 4px 0;
+        }
+    }
+    .quantity{
+        @include font(500);
+        width: 60px;
+        text-align: center;
+    }
+}
+.information{
+    .wrapper{
+        border: 1px solid $lightgray;
+        .info{
+            padding: 30px 0 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            .active{
+                color: $mainBlack;
+            }
+            h3{
+                @include font(500);
+                color: $lightgray;
+            }
+            
+        }
+        .desc{
+            display: flex;
+            justify-content: center;
+            p{
+                @include font(400);
+                color: $lightgray;
+                text-align: center;
+                padding-bottom: 30px;
+                width: 40%;
+            }
+        }
+        
+    }
+}
+.wrapper{
+    .cards{
+        h2{
+            @include font(500);
+            text-align: left;
+            color: $mainBlack;
+        }
+    }
+    
+}
